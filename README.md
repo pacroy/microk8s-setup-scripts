@@ -5,8 +5,10 @@ Bash script to setup microk8s on Ubuntu 20.04.
 ## Configure SSH
 
 ```sh
-sed -i 's/#Port 22/Port 15930/g' /etc/ssh/sshd_config && systemctl restart sshd
+sed -i 's/#Port 22/Port <port>/g' /etc/ssh/sshd_config && systemctl restart sshd
 ```
+
+*replace `<port>` with the port number you want or generate a random one from [here](https://www.random.org/integers/?num=1&min=5001&max=49151&col=5&base=10&format=html&rnd=new).
 
 ## Install microk8s
 
