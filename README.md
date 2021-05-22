@@ -16,6 +16,8 @@ helm repo update
 helm install ingress-nginx ingress-nginx/ingress-nginx -n kube-system --set "controller.service.type=NodePort"
 ```
 
+_Reference: https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml_
+
 ## Install cert-manager
 
 ```sh
