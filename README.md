@@ -2,6 +2,12 @@
 
 Bash script to setup microk8s on Ubuntu 20.04.
 
+## Configure SSH
+
+```sh
+sed -i 's/#Port 22/Port 15930/g' /etc/ssh/sshd_config && systemctl restart sshd
+```
+
 ## Install microk8s
 
 ```sh
