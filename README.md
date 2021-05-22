@@ -25,3 +25,11 @@ helm repo add jetstack https://charts.jetstack.io
 helm repo update
 helm install cert-manager jetstack/cert-manager -n cert-manager --create-namespace --set "installCRDs=true"
 ```
+
+## Install Let's Encrypt ACME ClusterIssuer
+
+```sh
+helm repo add pacroy https://pacroy.github.io/helm-repo
+helm repo update
+helm install cluster-issuer pacroy/cluster-issuer -n cert-manager --set "email=youremail@domain.com"
+```
