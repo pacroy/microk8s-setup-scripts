@@ -8,8 +8,10 @@ Bash script to setup microk8s on Ubuntu 20.04.
 ./setup.sh
 ```
 
-## Install metallb
+## Install ingress-nginx
 
 ```sh
-microk8s enable metallb
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install ingress-nginx ingress-nginx/ingress-nginx -n kube-system --set "controller.service.type=NodePort"
 ```
