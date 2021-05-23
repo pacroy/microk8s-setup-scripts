@@ -5,6 +5,9 @@ set -o pipefail
 # Update system
 sudo apt-get update && sudo apt-get upgrade -y
 
+# Configure system
+sudo ln -s /usr/bin/python3 /usr/bin/python
+
 # Install microk8s
 sudo snap install microk8s --classic --channel=1.21
 
