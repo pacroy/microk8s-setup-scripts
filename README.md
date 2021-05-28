@@ -2,10 +2,16 @@
 
 Bash script to setup microk8s on Ubuntu 20.04.
 
-## Configure SSH
+## Configure System
+
+- Update system
+- Install python2 (required for LinuxDiagnostic extension)
+- Configure custom port for SSH
+
+Run with Custom Script for Linux extension
 
 ```sh
-sed -i 's/#Port 22/Port 12345/g' /etc/ssh/sshd_config && systemctl restart sshd
+apt-get update && apt-get upgrade -y && apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python && sed -i 's/#Port 22/Port 12345/g' /etc/ssh/sshd_config && systemctl restart sshd
 ```
 
 *replace `12345` with the port number you want or generate a random one from [here](https://www.random.org/integers/?num=1&min=5001&max=49151&col=5&base=10&format=html&rnd=new).
