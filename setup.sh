@@ -19,8 +19,7 @@ newgrp microk8s
 microk8s status --wait-ready
 
 # Check nodes and services
-microk8s kubectl get nodes
-microk8s kubectl get services
+microk8s kubectl get nodes,services
 
 # Enable dns and storage addons
 microk8s enable dns storage
