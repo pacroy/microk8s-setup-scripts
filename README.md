@@ -52,6 +52,8 @@ helm install cluster-issuer pacroy/cluster-issuer -n cert-manager --set "email=y
 
 ## Setup Attended Upgrades
 
+Ref: [Set up Automatic Security Update (Unattended Upgrades) on Ubuntu](https://www.linuxbabe.com/ubuntu/automatic-security-update-unattended-upgrades-ubuntu)
+
 ### Install unattended-upgrades
 
 Update system and install unattended-upgrades
@@ -152,3 +154,13 @@ echo "this is a test email." | mailx -r "from@yourhost.com" -s "hello" "youremai
 
 *replace `from@yourhost.com` with an address at your SMTP domain.<br />
 *replace `youremail@address.com` with your email address.
+
+## Automatic Restart
+
+Ref: [Schedule shutdown every day on Ubuntu 20.04 - Ask Ubuntu](https://askubuntu.com/questions/1278880/schedule-shutdown-every-day-on-ubuntu-20-04)
+
+Edit crontab using `sudo crontab -e` and add the following line:
+
+```
+29 0 * * 0 echo "$(hostname) is restarting..." | mailx -r "from@yourhost.com" -s "$(hostname) is restarting" "youremail@address.com" && shutdown -r +1
+```
