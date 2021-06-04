@@ -66,11 +66,10 @@ sudo apt install -y unattended-upgrades update-notifier-common
 ### Configure unattended-upgrades
 
 Edit file `/etc/apt/apt.conf.d/50unattended-upgrades` to uncomment and configure these lines:
-sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
 
 ```
 # Uncomment and configure these lines
-Unattended-Upgrade::Mail "youremail@address.com";
+Unattended-Upgrade::Mail "youremail@address.com,someone@somewhere.com";
 Unattended-Upgrade::MailReport "on-change";
 Unattended-Upgrade::Remove-Unused-Dependencies "true";
 Unattended-Upgrade::Automatic-Reboot "true";
@@ -149,7 +148,7 @@ sudo systemctl restart postfix
 ### Test Sending Email
 
 ```bash
-echo "this is a test email." | mailx -r "from@yourhost.com" -s "hello" "youremail@address.com"
+echo "this is a test email." | mailx -r "from@yourhost.com" -s "hello" "youremail@address.com" "someone@somewhere.com"
 ```
 
 *replace `from@yourhost.com` with an address at your SMTP domain.<br />
@@ -162,5 +161,5 @@ Ref: [Schedule shutdown every day on Ubuntu 20.04 - Ask Ubuntu](https://askubunt
 Edit crontab using `sudo crontab -e` and add the following line:
 
 ```
-29 0 * * 0 echo "$(hostname) is restarting..." | mailx -r "from@yourhost.com" -s "$(hostname) is restarting" "youremail@address.com" && shutdown -r +1
+29 0 * * 0 echo "$(hostname) is restarting..." | mailx -r "from@yourhost.com" -s "$(hostname) is restarting" "youremail@address.com" "someone@somewhere.com" && shutdown -r +1
 ```
