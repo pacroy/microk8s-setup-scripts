@@ -70,6 +70,11 @@ Create a new load balancer and a public IP.
   - Outbound ports-Choose by: Ports per instance
   - Port per instance: Input the maximum avaialble frontend ports
 
+### Configure NSG and Test SSH
+
+- Add a new inbound rule to allow traffic from source IPs (e.g. your computer-check by `curl ipv4.icanhazip.com`) to the backend SSH port.
+- Test SSH connection by `ssh -p <port> <your_ser_ip_or_dns>`
+
 ## Install microk8s
 
 ```sh
