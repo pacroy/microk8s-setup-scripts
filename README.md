@@ -166,7 +166,7 @@ sudo apt install -y unattended-upgrades update-notifier-common
 
 Edit file `/etc/apt/apt.conf.d/50unattended-upgrades` to uncomment and configure these lines:
 
-```
+```properties
 # Uncomment and configure these lines
 Unattended-Upgrade::Mail "youremail@address.com,someone@somewhere.com";
 Unattended-Upgrade::MailReport "on-change";
@@ -181,7 +181,7 @@ Unattended-Upgrade::Automatic-Reboot-Time "00:30";
 
 Edit file `/etc/apt/apt.conf.d/20auto-upgrades` and make sure these lines are in place:
 
-```
+```properties
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 ```
@@ -202,7 +202,7 @@ Edit file `/etc/postfix/main.cf`.
 
 Edit the following line:
 
-```
+```properties
 relayhost = [smtp.yourhost.com]:25
 ```
 
@@ -210,7 +210,7 @@ relayhost = [smtp.yourhost.com]:25
 
 Add the following lines:
 
-```
+```properties
 # outbound relay configurations
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
@@ -259,6 +259,6 @@ Ref: [Schedule shutdown every day on Ubuntu 20.04 - Ask Ubuntu](https://askubunt
 
 Edit crontab using `sudo crontab -e` and add the following line:
 
-```
+```crontab
 29 0 * * 0 echo "$(hostname) is restarting..." | mailx -r "from@yourhost.com" -s "$(hostname) is restarting" "youremail@address.com" "someone@somewhere.com" && shutdown -r +1
 ```
