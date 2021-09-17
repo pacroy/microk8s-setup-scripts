@@ -68,7 +68,7 @@ Create a new load balancer and a public IP.
   - TCP Reset: Disabled
   - Port allocation: Manually choose number of outbound ports
   - Outbound ports-Choose by: Ports per instance
-  - Port per instance: Input the maximum avaialble frontend ports
+  - Port per instance: Input the maximum available frontend ports minus 8 (reserved for another outbound rules)
 
 ### Configure NSG and Test SSH
 
