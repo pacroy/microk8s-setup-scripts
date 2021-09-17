@@ -100,6 +100,27 @@ IP.3 = <your_vm_public_ip>
 #MOREIPS
 ```
 
+## Remote Access
+
+Generate kube config file
+
+```sh
+microk8s config > ~/admin.config
+```
+
+Transfer the kube config file to your computer
+
+```sh
+scp your_server:~/admin.config ~/admin.config
+```
+
+Set the `KUBECONFIG` environment variable and you can start using kubectl
+
+```sh
+export KUBECONFIG=~/admin.config
+kubectl version
+```
+
 ### Install ingress-nginx
 
 ```sh
@@ -127,27 +148,6 @@ helm install cluster-issuer pacroy/cluster-issuer -n cert-manager --set "email=y
 ```
 
 *replace `youremail@address.com` with your email address.
-
-## Remote Access
-
-Generate kube config file
-
-```sh
-microk8s config > ~/admin.config
-```
-
-Transfer the kube config file to your computer
-
-```sh
-scp your_server:~/admin.config ~/admin.config
-```
-
-Set the `KUBECONFIG` environment variable and you can start using kubectl
-
-```sh
-export KUBECONFIG=~/admin.config
-kubectl version
-```
 
 ## Setup Attended Upgrades
 
