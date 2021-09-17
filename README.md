@@ -2,6 +2,24 @@
 
 Bash script to setup microk8s on Ubuntu 20.04.
 
+## Prerequisites
+
+Create the following Azure resources to deploy an Ubuntu Linux VM behind a load balancer.
+
+### Resource Group
+
+Create a new resource group
+
+### Virtual Betwork
+
+Create a new virtual network with one subnet with an associated NSG.
+
+- Assign a `/16` address space within [private addresses ranges][]
+- Create a subnet with `/24` address range within the assigned VNET space
+- Create an NSG and associated with the subnet. Leave the rules as-is, we will configure it later.
+
+[private addresses ranges]: <https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges>
+
 ## Configure System
 
 - Update system
