@@ -6,13 +6,13 @@ set -o pipefail
 sudo microk8s status --wait-ready
 
 # Check nodes and services
-microk8s kubectl get nodes,services
+sudo microk8s kubectl get nodes,services
 
 # Enable dns and storage addons
-microk8s enable dns storage
+sudo microk8s enable dns storage
 
 # Configure remote access by adding machine public hostname and IP address
-nano /var/snap/microk8s/current/certs/csr.conf.template
+sudo nano /var/snap/microk8s/current/certs/csr.conf.template
 
 # Export kubeconfig file
-microk8s config > ~/admin.config
+sudo microk8s config > ~/admin.config
