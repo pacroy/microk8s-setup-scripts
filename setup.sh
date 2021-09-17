@@ -5,10 +5,6 @@ set -o pipefail
 # Update system
 sudo apt-get update && sudo apt-get upgrade -y
 
-# Install Python2
-sudo apt install python2
-sudo ln -s /usr/bin/python2 /usr/bin/python
-
 # Install microk8s
 sudo snap install microk8s --classic --channel=1.21
 
