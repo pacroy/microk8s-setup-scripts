@@ -78,7 +78,10 @@ Create a new load balancer and a public IP.
 ## Install microk8s
 
 ```sh
+git clone https://github.com/pacroy/microk8s-setup-scripts.git
+cd microk8s-setup-scripts
 ./setup.sh
+./setup2.sh
 ```
 
 ### Install ingress-nginx
