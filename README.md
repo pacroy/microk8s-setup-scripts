@@ -20,6 +20,20 @@ Create a new virtual network with one subnet with an associated NSG.
 
 [private addresses ranges]: <https://www.ibm.com/docs/en/networkmanager/4.2.0?topic=translation-private-address-ranges>
 
+### Virtual Machine
+
+Create an Ubuntu Linux VM.
+
+- Choose to create `Ubuntu Server 20.04 LTS`
+- Size: Standard_B2ms (2 vcpus, 8GiB memory)
+- Authentication type: SSH
+- Set a username
+- SSH public key source: Use existing public key
+- Copy your local public SSH key into SSH public key
+- Public inbound port: None
+- Public IP: None
+- NIC network security group: None
+
 ## Configure System
 
 - Update system
