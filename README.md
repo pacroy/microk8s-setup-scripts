@@ -48,6 +48,28 @@ This script:
 - Install python2 (required for LinuxDiagnostic extension to install properly)
 - Configure custom port for SSH
 
+### Load Balancer
+
+Create a new load balancer and a public IP.
+
+- Type: Public
+- SKU: Standard
+- Tier: Regional
+- Add a new frontend IP and create a new public IP
+- Add a backend pool and add your VM into the list
+- Add a new load balancing rule for inbound SSH:
+  - Allow TCP:Frontend port:Backend port to the backend pool
+  - Create a new health probe with TCP:SSH port
+  - TCP reset: Disabled
+  - Floating IP: Disabled
+  - Outbound SNAT: Use recommended setting
+- Add a new outbound rule from the backend pool
+  - Protocol: All
+  - TCP Reset: Disabled
+  - Port allocation: Manually choose number of outbound ports
+  - Outbound ports-Choose by: Ports per instance
+  - Port per instance: Input the maximum avaialble frontend ports
+
 ## Install microk8s
 
 ```sh
