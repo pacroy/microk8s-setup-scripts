@@ -114,7 +114,7 @@ helm repo update
 helm install ingress-nginx ingress-nginx/ingress-nginx -n kube-system --set "controller.service.type=NodePort"
 ```
 
-_Reference: https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml_
+_Reference: [ingress-nginx/values.yaml at main · kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)_
 
 ### Install cert-manager
 
@@ -208,7 +208,7 @@ header_size_limit = 4096000
 
 Create file `/etc/postfix/sasl_passwd` and add the following line:
 
-```
+```text
 [smtp.yourhost.com]:25      username:password
 ```
 
