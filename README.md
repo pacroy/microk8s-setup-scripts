@@ -66,7 +66,8 @@ Create a new load balancer and a public IP.
 ```sh
 git clone https://github.com/pacroy/microk8s-setup-scripts.git
 cd microk8s-setup-scripts
-./setup.sh
+./setup1.sh
+./setup2.sh
 ```
 
 Edit file `/var/snap/microk8s/current/certs/csr.conf.template` by adding VM's public DNS and IP:
