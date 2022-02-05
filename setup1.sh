@@ -6,7 +6,7 @@ set -o pipefail
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Install microk8s
-sudo snap install microk8s --classic --channel=1.21
+sudo snap install microk8s --classic
 
 # Configure permission
 sudo usermod -a -G microk8s "$USER"

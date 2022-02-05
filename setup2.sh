@@ -15,4 +15,5 @@ sudo microk8s enable dns storage
 sudo nano /var/snap/microk8s/current/certs/csr.conf.template
 
 # Export kubeconfig file
+# shellcheck disable=SC2024
 sudo microk8s config > ~/admin.config
