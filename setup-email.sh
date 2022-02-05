@@ -20,6 +20,6 @@ sudo systemctl restart postfix
 
 # Test Sending Email
 printf "=== Test Sending Email ===\n"
-printf "Sender Email  : " && read sender
-printf "Receiver Email: " && read receiver
+printf "Sender Email  : " && read -r sender
+printf "Receiver Email: " && read -r receiver
 echo "this is a test email." | mailx -r "$sender" -s "hello" "$receiver"
