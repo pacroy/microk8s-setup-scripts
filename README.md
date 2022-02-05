@@ -34,20 +34,6 @@ Create an Ubuntu Linux VM.
 - Public IP: None
 - NIC network security group: None
 
-After the VM is created, configure the system by executing this script using Custom Script for Linux.
-
-```sh
-apt-get update && apt-get upgrade -y && apt install -y python2 && ln -s /usr/bin/python2 /usr/bin/python && sed -i 's/#Port 22/Port 12345/g' /etc/ssh/sshd_config && systemctl restart sshd
-```
-
-*replace `12345` with the port number you want or generate a random one from [here](https://www.random.org/integers/?num=1&min=5001&max=49151&col=5&base=10&format=html&rnd=new).
-
-This script:
-
-- Update system
-- Install python2 (required for LinuxDiagnostic extension to install properly)
-- Configure custom port for SSH
-
 ### Load Balancer
 
 Create a new load balancer and a public IP.
