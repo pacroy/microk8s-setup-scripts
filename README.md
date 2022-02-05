@@ -10,7 +10,7 @@ Create the following Azure resources to deploy an Ubuntu Linux VM behind a load 
 
 Create a new resource group
 
-### Virtual Betwork
+### Virtual Network
 
 Create a new virtual network with one subnet with an associated NSG.
 
