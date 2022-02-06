@@ -1,6 +1,6 @@
 # Microk8s Setup Scripts
 
-![](https://img.shields.io/badge/status-deprecated-red)
+![deprecated](https://img.shields.io/badge/status-deprecated-red)
 
 :warning: **IMPORTTANT: This project is superseded by [pacroy/microk8s-azure-vm](https://github.com/pacroy/microk8s-azure-vm).** :warning:
 
