@@ -1,5 +1,9 @@
 # Microk8s Setup Scripts
 
+![](https://img.shields.io/badge/status-deprecated-red)
+
+:warning: IMPORTTANT This project is superseded by [pacroy/microk8s-azure-vm](https://github.com/pacroy/microk8s-azure-vm). :warning:
+
 Bash script to setup microk8s on Ubuntu 20.04.
 
 ## Prerequisites
